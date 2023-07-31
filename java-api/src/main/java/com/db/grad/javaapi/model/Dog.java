@@ -1,7 +1,10 @@
 package com.db.grad.javaapi.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name = "dogs")
 public class Dog

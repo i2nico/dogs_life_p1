@@ -24,14 +24,15 @@ public class DogHandler {
 //        return itsDogRepo.count();
 //    }
 
-    public Dog getDogByName(String name) {
+    public List<Dog> getDogByName(String name) {
         List<Dog> dogs = itsDogRepo.findDogsByName(name);
 
         int size = dogs.size();
-        if (size == 1) {
-            return dogs.get(0);
-        } else {
+        System.out.println(size);
+        if (size == 0) {
             return null;
+        } else {
+            return dogs;
         }
     }
 }

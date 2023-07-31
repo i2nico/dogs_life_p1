@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface DogRepository extends JpaRepository<Dog, Integer> {
-    @Query(nativeQuery = true, value = "select * from dogs where name :name")
+    @Query(nativeQuery = true, value = "select * from dogs where name = :name")
     List<Dog> findDogsByName(String name);
 }

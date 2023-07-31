@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("/api/v1")
 @RestController
 public class DogController {
 
@@ -16,9 +15,8 @@ public class DogController {
     private DogHandler dogHandler;
 
     @GetMapping("/dogs/{name}")
-    public ResponseEntity<Dog> getDogByName(@PathVariable(value = "name") String name)
+    public List<Dog> getDogByName(@PathVariable String name)
     {
-        Dog dogs = dogHandler.getDogByName(name);
-        return ResponseEntity.ok().body(dogs);
+        return dogHandler.getDogByName(name);
     }
 }
