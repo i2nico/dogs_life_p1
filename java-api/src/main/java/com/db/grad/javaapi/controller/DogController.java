@@ -1,17 +1,26 @@
 package com.db.grad.javaapi.controller;
 
+import com.db.grad.javaapi.model.Dog;
 import com.db.grad.javaapi.service.DogHandler;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@RequestMapping("/api/v1")
 @RestController
 public class DogController {
 
     @Autowired
     private DogHandler dogHandler;
 
-    @GetMapping
+    @GetMapping("/dogs/{name}")
+    public ResponseEntity<Dog> getDogByName(@PathVariable(value = "name") String name)
+    {
+        Dog dogs =
+        return dogHandler.getDogByName(name);
+    }
 
 
 }
