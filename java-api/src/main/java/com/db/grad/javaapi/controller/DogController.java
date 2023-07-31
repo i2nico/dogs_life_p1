@@ -18,9 +18,7 @@ public class DogController {
     @GetMapping("/dogs/{name}")
     public ResponseEntity<Dog> getDogByName(@PathVariable(value = "name") String name)
     {
-        Dog dogs =
-        return dogHandler.getDogByName(name);
+        Dog dogs = dogHandler.getDogByName(name);
+        return ResponseEntity.ok().body(dogs);
     }
-
-
 }
