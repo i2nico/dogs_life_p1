@@ -1,6 +1,7 @@
 import Row from 'react-bootstrap/Row'
 import React from 'react'
 import HeroDetails from './HeroDetails'
+import { useState } from 'react'
 
 const heroes = 
     [
@@ -17,14 +18,25 @@ const heroes =
     ]
 
 const AllHeroes = () => {
+
+  const [total, setTotal] = useState(0);
+
+  const totalCountHandler = (name) =>{
+    console.log(name)
+    setTotal(total+1);
+  }
+
   return (
-    <Row xs="auto">
-        {heroes.map(hero => (
-          <div className='container' key={hero.id}>
-            <HeroDetails info={hero}/>
-          </div>
-        ))}
-    </Row>
+    <>
+      <h1> Total count is: {total}</h1>
+      <Row xs="auto">
+      {heroes.map(hero => (
+        <div className='container' key={hero.id.toString()}>
+          <HeroDetails info={hero} parentCount={totalCountHandler}/>
+        </div>
+       ))}
+      </Row>
+    </>
   )
 }
 
