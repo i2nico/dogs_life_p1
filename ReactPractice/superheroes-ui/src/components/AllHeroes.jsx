@@ -18,12 +18,12 @@ const heroes =
 
 const AllHeroes = () => {
   return (
-    <Row >
-      {heroes.map(hero => (
-        <div className='container' key={hero.id}>
-          <HeroDetails info={hero}/>
-        </div>
-      ))}
+    <Row xs="auto">
+        {heroes.map(hero => (
+          <div className='container' key={hero.id}>
+            <HeroDetails info={hero}/>
+          </div>
+        ))}
     </Row>
   )
 }

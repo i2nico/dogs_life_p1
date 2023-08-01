@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card'
 
 const HeroDetails = (props) => {
   return (
-    <Card>
+    <Card style={{ width: "16rem" }}>
       <div className="imgContainer">
         <Card.Img variant="top" src={images[props.info.alias.replaceAll(/\s/g, '')]} width="150px" />
       </div>
